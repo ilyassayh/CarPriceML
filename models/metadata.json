@@ -1,0 +1,30 @@
+{
+  "target": "selling_price",
+  "numeric_features": [
+    "year",
+    "km_driven",
+    "mileage_mpg",
+    "engine_cc",
+    "max_power_bhp",
+    "torque_nm",
+    "seats"
+  ],
+  "categorical_features": [
+    "name",
+    "company",
+    "model",
+    "edition",
+    "owner",
+    "fuel",
+    "seller_type",
+    "transmission"
+  ],
+  "training_rows": 4848,
+  "test_rows": 2078,
+  "metrics": {
+    "rmse": 144563.78506771833,
+    "mae": 71390.43692588646,
+    "r2": 0.9097137640602636
+  },
+  "currency_rate": 1.0
+}
