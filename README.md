@@ -39,9 +39,7 @@ Projet pédagogique complet: pipeline ML, API FastAPI, UI Streamlit, et déploie
 - Docker & Docker Compose (pour déploiement)
 
 ### Données
-Spécifiez le chemin du CSV. Exemple fourni par l’utilisateur:
-`C:\\Users\\Ilyass\\OneDrive - SUP RH Ecole Supérieure de Management et de Gestion des Ressources Humaines\\Desktop\\CarPriceML\\car-details.csv`
-
+Le fichier `car-details.csv` doit être présent à la racine du projet. 
 Note devise: si les prix ne sont pas en MAD, utilisez `--currency-rate` pour convertir.
 
 ### Installation locale
@@ -52,13 +50,11 @@ python -m venv .venv
 
 ### Entraînement
 ```bash
-.\.venv\Scripts\python pipeline/train.py \
-  --csv "C:\\Users\\Ilyass\\OneDrive - SUP RH Ecole Supérieure de Management et de Gestion des Ressources Humaines\\Desktop\\CarPriceML\\car-details.csv" \
-  --target price \
-  --test-size 0.3 \
-  --currency-rate 1.0 \
-  --out-model models/rf_model.joblib \
-  --out-meta models/metadata.json
+# Windows
+.\.venv\Scripts\python pipeline/train.py --csv car-details.csv --target selling_price
+
+# Linux/Mac
+python pipeline/train.py --csv car-details.csv --target selling_price
 ```
 
 Le script détecte automatiquement variables numériques et catégorielles (dtype object). Les features sont standardisées/encodées via `ColumnTransformer`.
